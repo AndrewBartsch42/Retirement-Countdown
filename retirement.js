@@ -31,11 +31,30 @@ const processEntries = (evt) => {
     evt.preventDefault();
     resetForm()
 
+
     // TODO: Validate Name 
     // if name == null throw an error else do nothing
+    try {
+        if (nameIn.textContent == ''){
+            throw new Error("blankName");
+        }
+    } catch (blankName) {
+        console.log("name feild is blank");
+        $("name_error").textContent = "Please enter a name feild";
+    }
+    // OLD: error logic for name validation
+    //if (nameIn.textContent == ''){
+    //   throw console.error("name field is null");
+    //}
+    
 
     // TODO: Validate Email
     // check formatting == xxxx@xxx.xxx
+    
+    let validEmailFormat = /^[a-zA-Z0-9_]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/; // regex expression for a valid email address
+    if (!validEmailFormat.test(emailIn.textContent) || emailIn.textContent == ''){
+        throw console.error("invalid email address")
+    }
 
     // TODO: Validate Date
     // make sure the date is at least in the present and not the past
