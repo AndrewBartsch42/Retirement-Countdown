@@ -51,12 +51,17 @@ const processEntries = (evt) => {
 
     // TODO: Validate Email
     // check formatting == xxxx@xxx.xxx
-    
-    let validEmailFormat = /^[a-zA-Z0-9_]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/; // regex expression for a valid email address
-    if (!validEmailFormat.test(emailIn.textContent) || emailIn.textContent == ''){
-        throw console.error("invalid email address")
+    try {
+        let validEmailFormat = /^[a-zA-Z0-9_]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/; // regex expression for a valid email address
+        if (!validEmailFormat.test(emailIn.textContent) || emailIn.textContent == ''){
+            throw new Error("invalidEmail")
+        }
+    } catch (error) {
+        console.log("invalid email")
+        let email_error_span = document.getElementById("email_error");
+        email_error_span.innerHTML = "Please enter a valid email address";
     }
-
+    
     // TODO: Validate Date
     // make sure the date is at least in the present and not the past
 
