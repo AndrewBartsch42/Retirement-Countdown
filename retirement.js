@@ -83,7 +83,7 @@ const setTestData = () => {
 
 const resetForm = () => {
     /* TODO:
-        clear all input fields
+        clear all input fields (done via html btw)
         clear the interval
         document.querySelectorAll(".error").forEach(s => s.textContent = "*");
         set the body width to 350px (like code above)
