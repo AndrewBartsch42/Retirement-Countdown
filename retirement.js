@@ -39,8 +39,9 @@ const processEntries = (evt) => {
             throw new Error("blankName");
         }
     } catch (error) {
-        console.log("name feild is blank");
-        $("name_error").textContent = "Please enter a name feild";
+        console.log("name field is blank");
+        let name_error_span = document.getElementById("name_error");
+        name_error_span.innerHTML = "Please enter a name field";
     }
     // OLD: error logic for name validation
     //if (nameIn.textContent == ''){
