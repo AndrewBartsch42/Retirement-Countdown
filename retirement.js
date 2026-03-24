@@ -38,7 +38,7 @@ const processEntries = (evt) => {
         if (nameIn.textContent == ''){
             throw new Error("blankName");
         }
-    } catch (blankName) {
+    } catch (error) {
         console.log("name feild is blank");
         $("name_error").textContent = "Please enter a name feild";
     }
