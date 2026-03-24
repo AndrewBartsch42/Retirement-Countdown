@@ -49,8 +49,8 @@ const processEntries = (evt) => {
     //}
     
 
-    // TODO: Validate Email
-    // check formatting == xxxx@xxx.xxx
+    // Validate Email
+    // check formatting == xxxx@xxx.xxx with a regex expression
     try {
         let validEmailFormat = /^[a-zA-Z0-9_]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/; // regex expression for a valid email address
         if (!validEmailFormat.test(emailIn.value) || emailIn.value == ''){
