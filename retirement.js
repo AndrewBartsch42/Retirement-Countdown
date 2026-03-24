@@ -31,13 +31,17 @@ const processEntries = (evt) => {
     evt.preventDefault();
     resetForm()
 
-    // TODO: Validate Name
+    // TODO: Validate Name 
+    // if name == null throw an error else do nothing
 
     // TODO: Validate Email
+    // check formatting == xxxx@xxx.xxx
 
     // TODO: Validate Date
+    // make sure the date is at least in the present and not the past
 
     // TODO: Numeric Validations
+    // check for negative numbers and numeric input
 
     /* TODO: Code try-catch logic
         try
