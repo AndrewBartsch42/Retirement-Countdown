@@ -114,6 +114,7 @@ const processEntries = (evt) => {
 };
 
 const startProjection = (name, bal, add, rate, years) => {
+    console.log(years);
     statusMsg.textContent = `Live Projection: ${name}`;
     statusMsg.style.color = "red";
     let count = 1;
@@ -141,13 +142,14 @@ const startProjection = (name, bal, add, rate, years) => {
             bal = ((bal + add) * (1 + (rate / 12 / 100))).toFixed(2);
         }
         const formatted = formatter.format(bal);
-        output.textContent = `Year ${startYear} = ${formatted}`;
+        output.textContent = `Year ${startYear + count} = ${formatted}`;
 
-        if (count => years){
+        if (count >= years){
             clearInterval(projectionTimer);
             statusMsg.textContent = "Calculation Complete!";
             statusMsg.style.color = "red";
         }
+        count++;
 
 
 
