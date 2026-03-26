@@ -41,12 +41,11 @@ const processEntries = (evt) => {
         isValid = false;
     }
 
-        const emailPattern = /^[a-zA-Z0-9_]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/;
-        if (!emailPattern.test(emailIn.value.trim())) {
-            $("#email_error").textContent = emailIn.title;
-            isValid = false;
-        }
-
+    const emailPattern = /^[a-zA-Z0-9_]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/;
+    if (!emailPattern.test(emailIn.value.trim())) {
+        $("#email_error").textContent = emailIn.title;
+        isValid = false;
+    }
 
     /* TODO: Validate Date
         if date is empty
