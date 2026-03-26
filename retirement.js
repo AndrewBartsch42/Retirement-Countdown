@@ -185,6 +185,15 @@ const resetForm = () => {
         set the statusMsg to red (see code example above)
         set the focus to the name input field (Ch 9)
      */
+    const errBoxes = document.getElementsByClassName("error");
+    for(var i = 0; i < errBoxes.length; i++){
+        errBoxes[i].textContent = "*";
+    }
+    errBox.textContent = "";
+    document.body.style.width = "350px";
+    statusMsg.color = "red";
+    nameIn.focus();
+    clearInterval(projectionTimer);
 };
 
 document.addEventListener("DOMContentLoaded", () => {
