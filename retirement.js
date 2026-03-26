@@ -169,7 +169,8 @@ const setTestData = () => {
     rateIn.value = "5.5";
 
     const future = new Date();
-    future.setFullYear(future.getFullYear())
+    future.setFullYear(future.getFullYear() + 10)
+    dateIn.value = future.toISOString().split('T')[0];
 };
 
 const resetForm = () => {
