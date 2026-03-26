@@ -116,7 +116,7 @@ const processEntries = (evt) => {
 const startProjection = (name, bal, add, rate, years) => {
     console.log(years);
     statusMsg.textContent = `Live Projection: ${name}`;
-    statusMsg.style.color = "red";
+    statusMsg.style.color = "black";
     let count = 1;
 
     const startYear = new Date().getFullYear();
@@ -194,7 +194,9 @@ const resetForm = () => {
     }
     errBox.textContent = "";
     document.body.style.width = "350px";
-    statusMsg.color = "red";
+    statusMsg.textContent = "";
+    statusMsg.color = "black";
+    output.textContent = "";
     nameIn.focus();
     clearInterval(projectionTimer);
 };
