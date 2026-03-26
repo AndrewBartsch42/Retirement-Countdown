@@ -166,7 +166,7 @@ const setTestData = () => {
      */
     nameIn.value = "Joe Smith";
     emailIn.value = "josmith@wsc.edu";
-    investIn.value = "10000";
+    investIn.value = "100000";
     addIn.value = "500";
     rateIn.value = "5.5";
 
