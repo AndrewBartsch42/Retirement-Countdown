@@ -1,4 +1,7 @@
 # Retirement-Countdown
+AUTHORS:![ANDREW BARTSCH](https://github.com/AndrewBartsch42)  ![Kaleb Aregay](https://github.com/Kalebk24)
+PROGRAM DESCRIPTION:  
+NEW CONCEPTS:  
 
 
 ERROR MESSAGES:  
