@@ -106,7 +106,12 @@ const processEntries = (evt) => {
         if (!isValid) {
             throw new Error("Please correct the entries highlighted below.");
         }
-
+        localStorage.name = nameIn.value;
+        localStorage.email = emailIn.value;
+        localStorage.invest = investIn.value;
+        localStorage.monthlyAdd = addIn.value;
+        localStorage.rate = rateIn.value;
+        localStorage.retirementdate = dateIn.value;
         document.body.style.width = "350px";
         startProjection(nameIn.value, invest, add, rate, years);
     } catch (e) {
@@ -116,7 +121,7 @@ const processEntries = (evt) => {
 };
 
 const startProjection = (name, bal, add, rate, years) => {
-    console.log(years);
+    //console.log(years);
     statusMsg.textContent = `Live Projection: ${name}`;
     statusMsg.style.color = "black";
     let count = 1;
@@ -206,6 +211,12 @@ const resetForm = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+    $("#client_name").value = localStorage.name ?? "";
+    $("#email").value = localStorage.email ?? "";
+    $("#investment").value = localStorage.invest ?? "";
+    $("#monthly_add").value = localStorage.monthlyAdd ?? "";
+    $("#rate").value = localStorage.rate ?? "";
+    $("#retirement_date").value = localStorage.retirementdate ?? "";
     form.addEventListener("submit", processEntries);
     form.addEventListener("reset", resetForm);
     testData.addEventListener("click", setTestData);
