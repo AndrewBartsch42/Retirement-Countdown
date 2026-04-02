@@ -47,7 +47,8 @@ const processEntries = (evt) => {
         isValid = false;
     }
 
-    /* TODO: Validate Date
+    /* TODO: DONE 
+        Validate Date
         if date is empty
             display error similar to name logic
         else
@@ -76,7 +77,8 @@ const processEntries = (evt) => {
     }
 
     /*
-     TODO: do the same for the other two numeric input values
+     TODO: DONE 
+        do the same for the other two numeric input values
         based on the input field's title data validation message
      */
     if (isNaN(add) || add < 0) {
@@ -89,7 +91,8 @@ const processEntries = (evt) => {
         isValid = false;
     }
 
-    /* TODO: Code try-catch logic
+    /* TODO: DONE 
+        Code try-catch logic
         try
             if not valid then throw error "Please correct the entries highlighted below."
             NOTE: otherwise the following 2 statements will run
@@ -124,7 +127,8 @@ const startProjection = (name, bal, add, rate, years) => {
     output.textContent = `Year ${startYear} = ${formattedBal}`;
 
     projectionTimer = setInterval(() => {
-    /* TODO: code the interval logic
+    /* TODO: DONE 
+        code the interval logic
         for (let i = 0; i < 12; i++) {
             bal = ((bal + add) * (1 + (rate / 12 / 100))).toFixed(2);
         }
@@ -157,7 +161,8 @@ const startProjection = (name, bal, add, rate, years) => {
 
 const setTestData = () => {
     resetForm();
-    /* TODO: set default value for all input fields
+    /* TODO: DONE 
+        set default value for all input fields
         Setup the future date to 10 years from now:
         (1) create a const variable named future and set it to the current date (Ch 8)
         (2) add 10 years to the future date variable (Ch 8)
@@ -175,7 +180,7 @@ const setTestData = () => {
 };
 
 const resetForm = () => {
-    /* TODO:
+    /* TODO: DONE
         Using textContent clear the following error spans
             errBox (#error_message)
             output (#projection_output)
