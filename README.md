@@ -7,7 +7,8 @@ This program is a website that calculates the investment quantity of an initial 
 NEW CONCEPTS:  
 - Data validation with a try catch
 - interval logic with a repeated function
-- reset function for data fields and div sizing  
+- reset function for data fields and div sizing
+- local storage for most recent valid input   
 
 ERROR MESSAGES:  
 ![](https://github.com/AndrewBartsch42/Retirement-Countdown/blob/1d926800a45c6763533fce5a467beec66c3b3412/pictures/errors.png)  
