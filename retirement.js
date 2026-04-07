@@ -23,7 +23,10 @@ const formatter = new Intl.NumberFormat('en-US', {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
 });
-
+/**
+ * Process Entries takes in the submit button event and runs data validation
+ * @param {*} evt 
+ */
 const processEntries = (evt) => {
     let isValid = true;
     let years = 0;
@@ -119,7 +122,14 @@ const processEntries = (evt) => {
         errBox.textContent = e.message;
     }
 };
-
+/**
+ *  This function does a calculation given a rate and monthly contribution over a period of years to calculate the amount in a investment account
+ * @param {string} name 
+ * @param {int} bal 
+ * @param {int} add 
+ * @param {double} rate 
+ * @param {int} years 
+ */
 const startProjection = (name, bal, add, rate, years) => {
     //console.log(years);
     statusMsg.textContent = `Live Projection: ${name}`;
@@ -163,7 +173,9 @@ const startProjection = (name, bal, add, rate, years) => {
 
     }, 1000);
 };
-
+/**
+ * this function fills the form with test data
+ */
 const setTestData = () => {
     resetForm();
     /* TODO: DONE 
@@ -183,7 +195,9 @@ const setTestData = () => {
     future.setFullYear(future.getFullYear() + 10)
     dateIn.value = future.toISOString().split('T')[0];
 };
-
+/**
+ * this function resets the error feilds and text content box size
+ */
 const resetForm = () => {
     /* TODO: DONE
         Using textContent clear the following error spans
@@ -209,7 +223,9 @@ const resetForm = () => {
     nameIn.focus();
     clearInterval(projectionTimer);
 };
-
+/**
+ * this function adds all the event listeners and pulls the local storage into the corrisponding fields
+ */
 document.addEventListener("DOMContentLoaded", () => {
     $("#client_name").value = localStorage.name ?? "";
     $("#email").value = localStorage.email ?? "";
@@ -220,4 +236,5 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", processEntries);
     form.addEventListener("reset", resetForm);
     testData.addEventListener("click", setTestData);
+    localStorage.getItem()
 });
