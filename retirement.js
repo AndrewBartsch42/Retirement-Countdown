@@ -3,12 +3,15 @@
 // Defer in HTML allows us to grab these immediately at the top
 const $ = selector => document.querySelector(selector);
 
+// Inputs
 const nameIn    = $("#client_name");
 const emailIn   = $("#email");
 const investIn  = $("#investment");
 const addIn     = $("#monthly_add");
 const rateIn    = $("#rate");
 const dateIn    = $("#retirement_date");
+
+// Outputs and user interface elements
 const errBox    = $("#error_message");
 const statusMsg = $("#status_message");
 const output    = $("#projection_output");
@@ -17,12 +20,17 @@ const testData  = $("#test_data");
 
 let projectionTimer = null;
 
+/**
+ * Currency formatter of USD
+ * @type {Intl.NumberFormat}
+ */
 const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
 });
+
 /**
  * Process Entries takes in the submit button event and runs data validation
  * @param {*} evt 
@@ -44,6 +52,7 @@ const processEntries = (evt) => {
         isValid = false;
     }
 
+    // Validates the email
     const emailPattern = /^[a-zA-Z0-9_]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/;
     if (!emailPattern.test(emailIn.value.trim())) {
         $("#email_error").textContent = emailIn.title;
@@ -74,6 +83,7 @@ const processEntries = (evt) => {
         }
     }
 
+    // Validates the numeric fields
     if (isNaN(invest) || invest < 0) {
         $("#investment_error").textContent = investIn.title;
         isValid = false;
@@ -109,14 +119,18 @@ const processEntries = (evt) => {
         if (!isValid) {
             throw new Error("Please correct the entries highlighted below.");
         }
+
+        // Saves to localStorage
         localStorage.name = nameIn.value;
         localStorage.email = emailIn.value;
         localStorage.invest = investIn.value;
         localStorage.monthlyAdd = addIn.value;
         localStorage.rate = rateIn.value;
         localStorage.retirementdate = dateIn.value;
+
         document.body.style.width = "350px";
         startProjection(nameIn.value, invest, add, rate, years);
+
     } catch (e) {
         document.body.style.width = "700px";
         errBox.textContent = e.message;
@@ -131,9 +145,11 @@ const processEntries = (evt) => {
  * @param {int} years 
  */
 const startProjection = (name, bal, add, rate, years) => {
+
     //console.log(years);
     statusMsg.textContent = `Live Projection: ${name}`;
     statusMsg.style.color = "black";
+
     let count = 1;
 
     const startYear = new Date().getFullYear();
